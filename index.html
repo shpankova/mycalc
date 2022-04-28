@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/right-nav-style.css">
+  <title>Calculator</title>
+</head>
+
+<body>
+  <input type="checkbox" id="nav-toggle" hidden>
+  <nav class="nav">
+      <label for="nav-toggle" class="nav-toggle" onclick></label>
+      <ul>
+    
+          <div class="json-buttons">
+            <div class="json-button json-console">JSON to console</div>
+            <div class="json-button json-page">JSON at new page</div>
+          </div>
+          </ul>
+  </nav>
+  <div class="container">
+    <div class="main-display">0</div>
+    <div class="numbers">
+      <div class="number">7</div>
+      <div class="number">8</div>
+      <div class="number">9</div>
+      <div class="operation">*</div>
+
+      <div class="number">4</div>
+      <div class="number">5</div>
+      <div class="number">6</div>
+      <div class="operation">/</div>
+
+      <div class="number">1</div>
+      <div class="number">2</div>
+      <div class="number">3</div>
+      <div class="operation">-</div>
+
+      <button class="operation" data-blocked='true' disabled>.</button>
+      <div class="number">0</div>
+      <div class="operation">+</div>
+      <div class="operation">=</div>
+
+      <div class="cleaner-button">C</div>
+
+      <div class="memory-display"></div>
+    </div>
+    <div class="options">
+        <form class="integrity">
+          <label for="integer">
+            <input type="radio" name="dataMode" id="float"> float
+          </label>
+          <label for="float">
+            <input type="radio" name="dataMode" id="integer" checked> integer
+          </label>
+        </form>
+        <form class="priority">
+          <label for="priority">
+            <input type="checkbox" name="priority" id="priority"> priority<span class="checkmark"></span>
+          </label>
+        </form>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

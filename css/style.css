@@ -1,0 +1,271 @@
+body {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Calibri";
+  background-color: rgb(255, 255, 255);
+  margin: 0;
+
+}
+
+.container {
+  width: 1200px;
+  max-width: 360px;
+  height: auto;
+  padding: 1vw;
+  margin: 10px auto 0 auto;
+  font-size: 30px;
+  background-color: #000000;
+}
+
+.main-display {
+  height: auto;
+  display: flex;
+  padding: 5px 20px;
+  align-items: center;
+  border-radius: 3px;
+  color: #fff;
+  padding: 10px;
+  overflow: auto; 
+  overflow-wrap: anywhere;
+  justify-content: flex-end;
+
+}
+
+.numbers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr ;
+  background-color: #000000;
+  border-radius: 10px;
+  max-width: 360px;
+  font-family: "Calibri";
+  padding: 15px;
+
+}
+.numbers .number {
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  cursor: pointer;
+}
+.numbers .number:hover {
+  background-color: rgba(109, 110, 106, 0.288);
+  border-radius: 100%;
+}
+
+.numbers .operation {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  cursor: pointer;
+  color: #09ff01;
+
+}
+.numbers .operation:hover {
+  background-color: rgba(109, 110, 106, 0.288);
+  border-radius: 100%;
+}
+
+.operation[data-blocked=true] {
+  background-color: rgb(0, 0, 0);
+  border: none;
+  color: #000;
+  }
+
+.operation[data-blocked=true]:hover {
+  background-color: rgb(0, 0, 0);
+  border-radius: 10%;
+}
+.operation[data-blocked=false] {
+  background-color: rgb(0, 0, 0);
+  border: none;
+  }
+
+
+.operation[data-blocked=false]:hover {
+  background-color: rgba(109, 110, 106, 0.288);
+  border-radius: 100%;
+}
+
+
+
+.cleaner-button {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  border-radius: 4px;
+  user-select: none;
+  transition: 0.5s all;
+  cursor: pointer;
+  color: #09ff01;
+  margin: 20px;
+}
+.cleaner-button:hover {
+  background-color: #242525;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.json-button {
+  background-color: #000000f9;
+  color: #09ff01;
+  font-size: 20px;
+  padding: 10px;
+  text-align: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.05s all;
+}
+.json-button:hover {
+  color: rgb(255, 255, 255);
+}
+
+.memory-display {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  height: 100%;
+  font-size: 20px;
+  display: flex;
+  margin: 20px;
+  padding-left: 10px;
+  border: 1px solid #ffffff;
+  color: #09ff01;
+  background-color: #000000;
+  border-radius: 3px;
+}
+
+.integrity {
+  margin: 20px 0px 0px 20px;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+.integrity label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.5s all;
+  color: #09ff01;
+}
+.integrity label:hover {
+  color: #666666;
+}
+.integrity label:hover input[type=radio]::before {
+  box-shadow: inset 1em 1em leghten(#333333, 20%);
+}
+.integrity input[type=radio] {
+  -webkit-appearance: none;
+  appearance: none;
+  box-shadow: inset 1em 1em #ffffff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  margin-right: 0.2em;
+  width: 0.8em;
+  height: 0.8em;
+  border: 0.1em solid currentColor;
+  border-radius: 50%;
+  transform: translateY(0.05em);
+  display: grid;
+  place-content: center;
+}
+.integrity input[type=radio]::before {
+  content: "";
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #333333;
+}
+.integrity input[type=radio]:checked::before {
+  transform: scale(1);
+}
+
+.priority {
+  display: block;
+  position: relative;
+  margin: 0px 20px;
+  margin: 20px;
+  padding-left: 1em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.priority label {
+  cursor: pointer;
+  transition: 0.5s all;
+  color: #09ff01;
+
+}
+.priority label:hover {
+  color: #666666;
+}
+.priority input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+.priority .checkmark {
+  position: absolute;
+  top: 0.3em;
+  left: 0;
+  height: 0.8em;
+  width: 0.8em;
+  border: 3px solid white;
+  border-radius: 3px;
+  transition: 0.5s all;
+  background-color: #ffffff;
+}
+.priority:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.priority input:checked ~ .checkmark {
+  background-color: #333333;
+}
+.priority .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.priority input:checked ~ .checkmark:after {
+  display: block;
+}
+.priority .checkmark:after {
+  left: 5px;
+  top: 3px;
+  width: 10px;
+  height: 20px;
+  border: solid #09ff01;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+h1 {
+  text-align: center;
+  
+}
+
+.json-results {
+  padding: 20px;
+  font-size: 20px;
+  text-align: center;
+}
